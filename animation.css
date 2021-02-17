@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+#animation1_bg {
+  width: 250px;
+  height: 50px;
+  background: linear-gradient(#ffd1d6, #fdaeb5, #f56674);
+  display: flex;
+  align-items: center;
+}
+
+#animation1 {
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  align-items: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 900;
+  text-decoration-line: overline;
+}
