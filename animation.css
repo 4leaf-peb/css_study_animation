@@ -4,27 +4,96 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-}
-
-#animation1_bg {
-  width: 250px;
-  height: 50px;
-  background: linear-gradient(#ffd1d6, #fdaeb5, #f56674);
-  display: flex;
-  align-items: center;
 }
 
 #animation1 {
-  width: 250px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
+  position: relative;
+  margin: 30px 0;
+}
+
+#animation1::after {
+  content: "버튼";
+  position: absolute;
+  color: darkblue;
+  border: 2px solid darkblue;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  top: 0;
+  left: 0;
+  width: calc(100% - 4px);
+  height: 100%;
+  transition: 0.8s;
+}
+
+#animation1::before {
+  content: "버튼";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: darkblue;
+  width: 100%;
+  height: 100%;
+  transition: 0.8s;
+  display: flex;
   align-items: center;
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: 900;
-  text-decoration-line: overline;
+  justify-content: center;
+  color: #fff;
+  transform: rotateX(90deg);
+}
+
+#animation1:hover::before {
+  transform: translateY(-20px) rotateX(0);
+}
+
+#animation1:hover::after {
+  transform: rotateX(-90deg) translateY(-20px);
+  top: -20px;
+}
+
+#animation1two {
+  width: calc(100% - 4px);
+  height: 100%;
+  position: absolute;
+  border: 2px solid orange;
+  color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.8s;
+  top: 0;
+  left: 0;
+}
+
+#animation1absolute {
+  position: absolute;
+  background-color: orange;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(20px) rotateX(90deg);
+  color: white;
+  transition: 0.8s;
+}
+
+#animationBox {
+  width: 150px;
+  height: 40px;
+  position: relative;
+  margin: 0 30px;
+}
+
+#animationBox:hover #animation1two {
+  transform: rotateX(-90deg) translateY(-20px);
+  top: -20px;
+}
+
+#animationBox:hover #animation1absolute {
+  transform: translateY(0) rotateX(0);
 }
